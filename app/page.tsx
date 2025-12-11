@@ -1,192 +1,210 @@
 "use client";
 import Image from "next/image";
 import ExperienceList from "./experiences";
-import NameAnimation from "./nameAnimation";
+import TypeAnimation from "./nameAnimation";
 import { useState } from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="font-mono tracking-wide grid items-center min-h-screen xl:px-60 lg:px-30 md:px-10 px-10 pb-10">
-      <nav className="w-470 py-4 flex gap-[60px] flex-wrap items-center justify-center fixed top-0 left-0 bg-background z-50">
-        {/* LINKS EXISTENTES */}
-        <a
-          className="flex items-center gap-5 hover:underline hover:underline-offset-4"
-          href="https://youtube.com/@filipedeschamps"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            className="dark:invert sm:w-15 sm:h-4"
-            aria-hidden
-            src="/youtube.svg"
-            alt="Youtube icon"
-            width={20}
-            height={20}
-          />
-          <span className="hidden sm:block">Youtube</span>
-        </a>
-        <a
-          className="flex items-center gap-5 hover:underline hover:underline-offset-4"
-          href="https://www.instagram.com/edu.prl/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            className="dark:invert sm:w-15 sm:h-4"
-            aria-hidden
-            src="/instagram.svg"
-            alt="Instagram icon"
-            width={100}
-            height={100}
-          />
-          <span className="hidden sm:block">Instagram</span>
-        </a>
-        {/*talvez o único jeito de comentar no código, já que nâo é possivel por \\*/}
-        <a
-          className="flex items-center gap-5 hover:underline hover:underline-offset-4"
-          href="https://github.com/eduardoporangaba"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            className="dark:invert sm:w-15 sm:h-4"
-            aria-hidden
-            src="/gitHub.svg"
-            alt="GitHub icon"
-            width={500}
-            height={500}
-          />
-          <span className="hidden sm:block">GitHub</span>
-        </a>
-        <a
-          className="flex items-center gap-5 hover:underline hover:underline-offset-4"
-          href="https://www.linkedin.com/in/eduardo-porangaba"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            className="dark:invert sm:w-15 sm:h-4"
-            aria-hidden
-            src="/linkedin.svg"
-            alt="Linkedin icon"
-            width={20}
-            height={20}
-          />
-          <span className="hidden sm:block">Linkedin</span>
-        </a>
-        {/* ---- NOVO MENU ⋮ ---- */}
-        <div className="relative ml-auto">
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="
-                text-2xl 
-                px-2 py-1 
-                rounded-md 
-                transition-all duration-200 
-                hover:bg-neutral-200 dark:hover:bg-neutral-800 
-                active:scale-90 
-                hover:scale-110
-              "
-          >
-            ⋮
-          </button>
-          {menuOpen && (
-            <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-neutral-900 shadow-lg rounded-lg py-2 flex flex-col text-sm">
-              <a
-                onClick={() => {
-                  window.location.href = "/app/meetMe";
-                }}
-                className="px-4 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+    <div className="min-h-screen bg-background font-mono tracking-wide">
+      {/* Navbar fixa, full-width, responsiva */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-neutral-200 dark:border-neutral-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-8 py-4 sm:gap-12">
+            {/* Links sociais - visíveis em sm+ ou sempre ícones */}
+            <a
+              href="https://github.com/eduardoporangaba"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:underline hover:underline-offset-4"
+            >
+              <Image
+                src="/gitHub.svg"
+                alt="GitHub"
+                width={24}
+                height={24}
+                className="dark:invert"
+              />
+              <span className="hidden sm:block">GitHub</span>
+            </a>
+
+            <a
+              href="https://www.instagram.com/edu.prl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:underline hover:underline-offset-4"
+            >
+              <Image
+                src="/instagram.svg"
+                alt="Instagram"
+                width={24}
+                height={24}
+                className="dark:invert"
+              />
+              <span className="hidden sm:block">Instagram</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/eduardo-porangaba"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:underline hover:underline-offset-4"
+            >
+              <Image
+                src="/linkedin.svg"
+                alt="Linkedin"
+                width={24}
+                height={24}
+                className="dark:invert"
+              />
+              <span className="hidden sm:block">Linkedin</span>
+            </a>
+
+            <a
+              href="https://youtube.com/@filipedeschamps"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:underline hover:underline-offset-4"
+            >
+              <Image
+                src="/youtube.svg"
+                alt="Youtube"
+                width={24}
+                height={24}
+                className="dark:invert"
+              />
+              <span className="hidden sm:block">Youtube</span>
+            </a>
+
+            {/* Botão extra */}
+            <button
+              onClick={() =>
+                window.open(
+                  "https://youtu.be/ko70cExuzZM?si=OSh52P8D2FpXYGRu",
+                  "_blank"
+                )
+              }
+              className="hidden sm:block px-4 py-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+            >
+              DuDudu&Edu
+            </button>
+
+            {/* Menu hamburger - só aparece em mobile */}
+            <div className="sm:hidden relative">
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="text-3xl p-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
               >
-                Sobre mim
-              </a>
-              <a
-                onClick={() => {
-                  window.location.href = "mail:eduardoporangaba2@gmail.com";
-                }}
-                className="px-4 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-800"
-              >
-                Contato
-              </a>
+                ⋮
+              </button>
+              {menuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-neutral-900 shadow-lg rounded-lg py-2">
+                  <button
+                    onClick={() => (window.location.href = "/app/meetMe")}
+                    className="w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                  >
+                    Sobre mim
+                  </button>
+                  <a
+                    href="mailto:eduardoporangaba2@gmail.com"
+                    className="block w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                  >
+                    Contato
+                  </a>
+                  <button
+                    onClick={() =>
+                      window.open(
+                        "https://youtu.be/ko70cExuzZM?si=OSh52P8D2FpXYGRu",
+                        "_blank"
+                      )
+                    }
+                    className="w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                  >
+                    DuDudu&Edu
+                  </button>
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
-        {/* ---- FIM DO NOVO MENU ---- */}{" "}
-        <a
-          onClick={() => {
-            window.location.href =
-              "https://youtu.be/ko70cExuzZM?si=OSh52P8D2FpXYGRu";
-          }}
-          className="px-4 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-800"
-        >
-          DuDudu&Edu
-        </a>
       </nav>
 
-      <main className="flex text-lg flex-col row-start-2">
-        <div className="flex min-h-screen text-lg flex-col row-start-2 items-center justify-center">
-          Opa! sou
-          <h1 className="text-5xl mt-3 mb-5 text-center">
-            <NameAnimation />
+      {/* Espaço para compensar navbar fixa */}
+      <div className="pt-20" />
+
+      {/* Conteúdo principal */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero section */}
+        <section className="min-h-screen flex flex-col items-center justify-center text-center -mt-20">
+          <p className="text-lg mb-2">Opa! me chamo</p>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8">
+            <TypeAnimation />
           </h1>
-          <p className="max-w-5xl text-base leading-7 text-center">
+          <p className="max-w-3xl text-base sm:text-lg leading-relaxed">
             Um menino estudando a internet.
             <br />
-            <span className="text-purple-400">Sempre</span> com vontade de
-            aprender e isso é a <span className="text-purple-400">força</span>{" "}
+            <span className="text-purple-200">Sempre</span> com vontade de
+            aprender e isso é a <span className="text-purple-200">força</span>{" "}
             que me move. 🛹™️
             <br />
-            <span className="text-purple-400">
+            <span className="text-purple-200">
               É um prazer te ver por aqui!
             </span>
           </p>
-        </div>
+        </section>
 
-        <h1 id="sobre" className="text-left font-bold text-2xl">
-          Brevemente:
-        </h1>
-        <div className="flex flex-col sm:flex-row mb-10 items-center sm:items-start">
-          <p className="my-10 leading-7 sm:mr-60 text-base text-left">
-            Meu nome é{" "}
-            <span className="text-purple-400">
-              Eduardo Porangaba Leite Ribeiro da Silva
-            </span>
-            , atualmente, tenho 18 anos e trabalho como{" "}
-            <span className="text-purple-400">Assistente de T.I. Júnior</span>{" "}
-            na minha primeira empresa, e sinceramente?{" "}
-            <span className="text-purple-400">AMO</span> oque faço!
-            <br />
-            <br />
-            Sou fascinado por{" "}
-            <span className="text-purple-400">tecnologia</span> desde pequeno,
-            um pouco nerd, mas <span className="text-purple-400">sempre</span>{" "}
-            com vontade de mexer com as máquinas.
-            <br />
-            <br />
-            Nascido e crescido em{" "}
-            <span className="text-purple-400">São Paulo</span>, atualmente moro
-            em <span className="text-purple-400">Garuva Sᴄ</span>.
-          </p>
-          <Image
-            className="rounded-lg object-cover"
-            alt="Du Porangaba"
-            src="/eu_deverdade.png"
-            width={500}
-            height={500}
-          />
-        </div>
+        {/* Sobre */}
+        <section id="sobre" className="py-10">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8">Brevemente:</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <p className="text-base sm:text-lg leading-7 text-left">
+              Meu nome é{" "}
+              <span className="text-purple-200">
+                Eduardo Porangaba Leite Ribeiro da Silva
+              </span>
+              , atualmente tenho 18 anos e trabalho como{" "}
+              <span className="text-purple-200">Assistente de T.I. Júnior</span>{" "}
+              na minha primeira empresa, e sinceramente?{" "}
+              <span className="text-purple-200">AMO</span> o que faço!
+              <br />
+              <br />
+              Sou fascinado por{" "}
+              <span className="text-purple-200">tecnologia</span> desde pequeno,
+              um pouco nerd, mas <span className="text-purple-200">sempre</span>{" "}
+              com vontade de mexer com as máquinas.
+              <br />
+              <br />
+              Nascido e crescido em{" "}
+              <span className="text-purple-200">São Paulo</span>, atualmente
+              moro em <span className="text-purple-200">Garuva SC</span>.
+            </p>
+            <div className="flex justify-center md:justify-end">
+              <Image
+                src="/eu_deverdade.png"
+                alt="Eduardo Porangaba"
+                width={500}
+                height={500}
+                className="rounded-lg object-cover w-full max-w-md shadow-xl"
+              />
+            </div>
+          </div>
+        </section>
 
-        <h1 id="experiencia" className="text-left mb-10 font-bold text-2xl">
-          Experiências:
-        </h1>
-        <ExperienceList />
+        {/* Experiências */}
+        <section id="experiencia" className="py-10">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-10">
+            Experiências:
+          </h2>
+          <ExperienceList />
+        </section>
 
-        <footer className="text-center text-sm text-gray-500 mt-20">
+        {/* Footer */}
+        <footer className="text-center text-sm text-gray-500 py-10 mt-20 border-t border-neutral-200 dark:border-neutral-800">
           Projeto adaptado por Eduardo Porangaba usando Next.js, TypeScript e
           TailwindCSS.
-          <br /> © 2025, Portfólio de Apresentação Pessoal.
+          <br />© 2025, Portfólio de Apresentação Pessoal.
         </footer>
       </main>
     </div>
