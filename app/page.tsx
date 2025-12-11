@@ -132,7 +132,7 @@ export default function Home() {
             <NameAnimation />
           </h1>
           <p className="max-w-5xl text-base leading-7 text-center">
-            Um jovem garoto estudando a internet.
+            Um menino estudando a internet.
             <br />
             <span className="text-purple-400">Sempre</span> com vontade de
             aprender e isso é a <span className="text-purple-400">força</span>{" "}
