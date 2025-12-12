@@ -132,17 +132,19 @@ export default function Home() {
                 Eduardo Porangaba Leite Ribeiro da Silva
               </span>
               , atualmente tenho 18 anos e trabalho como{" "}
-              <span className="text-purple-300">Assistente de T.I. Júnior</span>{" "}
+              <span className="text-purple-400">Assistente de T.I. Júnior</span>{" "}
               na minha primeira empresa, venho trabalhando com projetos dentro
               da empresa e alguns pessoais, com foco em aprender mais sobre
-              lógicas, códigos, SQL, frameWorks, programação no geral, e
-              sinceramente? <span className="text-purple-300">Gosto</span> muito
-              do que faço!
+              lógicas, códigos, <span className="text-purple-400">SQL</span>,{" "}
+              <span className="text-purple-400">frameWorks</span>, programação
+              no geral, e sinceramente?{" "}
+              <span className="text-purple-400">Gosto muito</span> do que faço!
               <br />
               <br />
-              Nascido e crescido na capital de{" "}
-              <span className="text-purple-300">São Paulo</span>, atualmente
-              moro em <span className="text-purple-300">Garuva SC</span>.
+              Nascido e crescido na{" "}
+              <span className="text-purple-400">capital</span> de{" "}
+              <span className="text-purple-400">São Paulo</span>, atualmente
+              moro em <span className="text-purple-400">Garuva SC</span>.
               <br />
               <br />
               Sou fascinado por{" "}
