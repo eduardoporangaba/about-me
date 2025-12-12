@@ -62,30 +62,8 @@ export default function Home() {
               <span className="hidden sm:block">Linkedin</span>
             </a>
 
-            <a
-              href="https://youtube.com/@filipedeschamps"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 hover:underline hover:underline-offset-4"
-            >
-              <Image
-                src="/youtube.svg"
-                alt="Youtube"
-                width={24}
-                height={24}
-                className="dark:invert"
-              />
-              <span className="hidden sm:block">Youtube</span>
-            </a>
-
             {/* Botão extra */}
-            <button
-              onClick={() =>
-                window.open(
-                  "https://youtu.be/ko70cExuzZM?si=OSh52P8D2FpXYGRu",
-                  "_blank"
-                )
-              }
+            <button //botão responsável por redirecionar para outro site | onClick={() => window.open("https://youtu.be/ko70cExuzZM?si=OSh52P8D2FpXYGRu""_blank")}
               className="hidden sm:block px-4 py-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
             >
               DuDudu&Edu
@@ -101,25 +79,13 @@ export default function Home() {
               </button>
               {menuOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-neutral-900 shadow-lg rounded-lg py-2">
-                  <button
-                    onClick={() => (window.location.href = "/app/meetMe")}
-                    className="w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800"
-                  >
-                    Sobre mim
-                  </button>
                   <a
-                    href="mailto:eduardoporangaba2@gmail.com"
+                    href="mailto:eduardoporangaba1@gmail.com"
                     className="block w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800"
                   >
                     Contato
                   </a>
-                  <button
-                    onClick={() =>
-                      window.open(
-                        "https://youtu.be/ko70cExuzZM?si=OSh52P8D2FpXYGRu",
-                        "_blank"
-                      )
-                    }
+                  <button // botão responsável por redirecionar para outro site | onClick={() => window.open("https://youtu.be/ko70cExuzZM?si=OSh52P8D2FpXYGRu""_blank")}
                     className="w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800"
                   >
                     DuDudu&Edu
@@ -167,10 +133,11 @@ export default function Home() {
               </span>
               , atualmente tenho 18 anos e trabalho como{" "}
               <span className="text-purple-300">Assistente de T.I. Júnior</span>{" "}
-              na minha primeira empresa, venho trabalhando com projetos da
-              empresa e pessoais, com foco em aprender mais sobre lógicas,
-              códigos, SQL, frameWorks, programação no geral, e sinceramente?{" "}
-              <span className="text-purple-300">Gosto</span> muito do que faço!
+              na minha primeira empresa, venho trabalhando com projetos dentro
+              da empresa e alguns pessoais, com foco em aprender mais sobre
+              lógicas, códigos, SQL, frameWorks, programação no geral, e
+              sinceramente? <span className="text-purple-300">Gosto</span> muito
+              do que faço!
               <br />
               <br />
               Nascido e crescido em{" "}
