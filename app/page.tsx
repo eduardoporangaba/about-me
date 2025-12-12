@@ -202,9 +202,9 @@ export default function Home() {
 
         {/* Footer (compactado) */}
         <footer className="text-center text-sm text-gray-500 py-6 mt-10 border-t border-neutral-200 dark:border-neutral-800">
-          Projeto adaptado por Eduardo Porangaba usando Next.js, TypeScript e
+          Projeto pensado por Eduardo Porangaba usando Next.js, TypeScript e
           TailwindCSS.
-          <br />© 2025, Portfólio de Apresentação Pessoal.
+          <br />© 2025 exclusive license.
         </footer>
       </main>
     </div>
