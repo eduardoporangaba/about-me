@@ -143,11 +143,12 @@ export default function Home() {
             <TypeAnimation />
           </h1>
           <p className="max-w-3xl text-base sm:text-lg leading-relaxed">
-            Um menino estudando a internet.
+            Toda hora estudando a internet.
             <br />
-            <span className="text-purple-200">Sempre</span> com vontade de
-            aprender e isso é a <span className="text-purple-200">força</span>{" "}
-            que me move. 🛹™️
+            Um <span className="text-purple-200">código</span>, uma{" "}
+            <span className="text-purple-200">linha</span>, um{" "}
+            <span className="text-purple-200">projeto</span> de cada vez. 🛹™️
+            <br />
             <br />
             <span className="text-purple-200">
               É um prazer te ver por aqui!
@@ -155,7 +156,7 @@ export default function Home() {
           </p>
         </section>
 
-        {/* Sobre (compactado) */}
+        {/* Sobre */}
         <section id="sobre" className="py-6 sm:py-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Brevemente:</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
@@ -166,23 +167,26 @@ export default function Home() {
               </span>
               , atualmente tenho 18 anos e trabalho como{" "}
               <span className="text-purple-300">Assistente de T.I. Júnior</span>{" "}
-              na minha primeira empresa, e sinceramente?{" "}
-              <span className="text-purple-300">AMO</span> o que faço!
-              <br />
-              <br />
-              Sou fascinado por{" "}
-              <span className="text-purple-300">tecnologia</span> desde pequeno,
-              um pouco nerd, mas <span className="text-purple-300">sempre</span>{" "}
-              com vontade de mexer com as máquinas.
+              na minha primeira empresa, venho trabalhando com projetos da
+              empresa e pessoais, com foco em aprender mais sobre lógicas,
+              códigos, SQL, frameWorks, programação no geral, e sinceramente?{" "}
+              <span className="text-purple-300">Gosto</span> muito do que faço!
               <br />
               <br />
               Nascido e crescido em{" "}
               <span className="text-purple-300">São Paulo</span>, atualmente
               moro em <span className="text-purple-300">Garuva SC</span>.
+              <br />
+              <br />
+              Sou fascinado por{" "}
+              <span className="text-purple-300">tecnologia</span> desde pequeno,
+              um pouco nerd, mas <span className="text-purple-300">sempre</span>{" "}
+              buscando aprender, por isso construi esse isso aqui.
+              <br />
             </p>
             <div className="flex justify-center md:justify-end mt-4 md:mt-0">
               <Image
-                src="/eu_deverdade.png"
+                src="/eu_2.png"
                 alt="Eduardo Porangaba"
                 width={500}
                 height={500}
@@ -192,7 +196,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Experiências (compactado) */}
+        {/* Experiências */}
         <section id="experiencia" className="py-6 sm:py-8">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
             Experiências:
@@ -200,7 +204,7 @@ export default function Home() {
           <ExperienceList />
         </section>
 
-        {/* Footer (compactado) */}
+        {/* Footer */}
         <footer className="text-center text-sm text-gray-500 py-6 mt-10 border-t border-neutral-200 dark:border-neutral-800">
           Projeto pensado por Eduardo Porangaba usando Next.js, TypeScript e
           TailwindCSS.

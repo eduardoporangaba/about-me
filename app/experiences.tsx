@@ -4,8 +4,8 @@ import { useState } from "react";
 
 const experiences = [
   {
-    company: "Joinville Implementos",
-    shortCompany: "JIMP", // Abreviação para mobile
+    company: "Joinville Implementos Rodoviários",
+    shortCompany: "JIMP (Segundo período)", // Abreviação para mobile
     role: "Assistente de T.I. Júnior",
     period: "SET 2025 - PRESENTE",
     highlights: [
@@ -15,8 +15,8 @@ const experiences = [
     ],
   },
   {
-    company: "Joinville Implementos",
-    shortCompany: "JIMP",
+    company: "Joinville Implementos Rodoviários",
+    shortCompany: "JIMP (Primeiro período)",
     role: "Jovem Aprendiz de ADM/T.I.",
     period: "OUT 2024 - AGO 2025",
     highlights: [
