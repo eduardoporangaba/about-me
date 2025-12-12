@@ -155,11 +155,11 @@ export default function Home() {
           </p>
         </section>
 
-        {/* Sobre */}
-        <section id="sobre" className="py-10">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8">Brevemente:</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <p className="text-base sm:text-lg leading-7 text-left">
+        {/* Sobre (compactado) */}
+        <section id="sobre" className="py-6 sm:py-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Brevemente:</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+            <p className="text-base sm:text-lg leading-6 text-left">
               Meu nome é{" "}
               <span className="text-purple-200">
                 Eduardo Porangaba Leite Ribeiro da Silva
@@ -180,7 +180,7 @@ export default function Home() {
               <span className="text-purple-200">São Paulo</span>, atualmente
               moro em <span className="text-purple-200">Garuva SC</span>.
             </p>
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-center md:justify-end mt-4 md:mt-0">
               <Image
                 src="/eu_deverdade.png"
                 alt="Eduardo Porangaba"
@@ -192,16 +192,16 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Experiências */}
-        <section id="experiencia" className="py-10">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-10">
+        {/* Experiências (compactado) */}
+        <section id="experiencia" className="py-6 sm:py-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
             Experiências:
           </h2>
           <ExperienceList />
         </section>
 
-        {/* Footer */}
-        <footer className="text-center text-sm text-gray-500 py-10 mt-20 border-t border-neutral-200 dark:border-neutral-800">
+        {/* Footer (compactado) */}
+        <footer className="text-center text-sm text-gray-500 py-6 mt-10 border-t border-neutral-200 dark:border-neutral-800">
           Projeto adaptado por Eduardo Porangaba usando Next.js, TypeScript e
           TailwindCSS.
           <br />© 2025, Portfólio de Apresentação Pessoal.
