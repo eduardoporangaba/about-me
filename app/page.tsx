@@ -8,7 +8,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background font-mono tracking-wide">
+    <div className="min-h-screen bg-background font-sans tracking-wide">
       {/* Navbar fixa, full-width, responsiva */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-neutral-200 dark:border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,7 +139,7 @@ export default function Home() {
         {/* Hero section */}
         <section className="min-h-screen flex flex-col items-center justify-center text-center -mt-20">
           <p className="text-lg mb-2">Opa! me chamo</p>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8">
+          <h1 className="text-7xl sm:text-6xl lg:text-7xl font-bold mb-8">
             <TypeAnimation />
           </h1>
           <p className="max-w-3xl text-base sm:text-lg leading-relaxed">
@@ -161,24 +161,24 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
             <p className="text-base sm:text-lg leading-6 text-left">
               Meu nome é{" "}
-              <span className="text-purple-200">
+              <span className="text-purple-300">
                 Eduardo Porangaba Leite Ribeiro da Silva
               </span>
               , atualmente tenho 18 anos e trabalho como{" "}
-              <span className="text-purple-200">Assistente de T.I. Júnior</span>{" "}
+              <span className="text-purple-300">Assistente de T.I. Júnior</span>{" "}
               na minha primeira empresa, e sinceramente?{" "}
-              <span className="text-purple-200">AMO</span> o que faço!
+              <span className="text-purple-300">AMO</span> o que faço!
               <br />
               <br />
               Sou fascinado por{" "}
-              <span className="text-purple-200">tecnologia</span> desde pequeno,
-              um pouco nerd, mas <span className="text-purple-200">sempre</span>{" "}
+              <span className="text-purple-300">tecnologia</span> desde pequeno,
+              um pouco nerd, mas <span className="text-purple-300">sempre</span>{" "}
               com vontade de mexer com as máquinas.
               <br />
               <br />
               Nascido e crescido em{" "}
-              <span className="text-purple-200">São Paulo</span>, atualmente
-              moro em <span className="text-purple-200">Garuva SC</span>.
+              <span className="text-purple-300">São Paulo</span>, atualmente
+              moro em <span className="text-purple-300">Garuva SC</span>.
             </p>
             <div className="flex justify-center md:justify-end mt-4 md:mt-0">
               <Image

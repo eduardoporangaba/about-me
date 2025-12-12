@@ -13,7 +13,7 @@ export default function NameAnimation() {
         style={{
           fontFamily:
             "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
-          fontSize: "clamp(2.5rem, 9vw + 1rem, 7rem)", // Pequeno no celular, gigante no desktop
+          fontSize: "clamp(2.5rem, 9vw + 1rem, 7rem)", // Pequeno no celular, grande no PC
           fontWeight: 900,
           letterSpacing: "0.12em",
           background: "linear-gradient(to right, #c084fc, #f3e8ff)",
