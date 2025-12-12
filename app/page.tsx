@@ -140,7 +140,7 @@ export default function Home() {
               do que faço!
               <br />
               <br />
-              Nascido e crescido em{" "}
+              Nascido e crescido na capital de{" "}
               <span className="text-purple-300">São Paulo</span>, atualmente
               moro em <span className="text-purple-300">Garuva SC</span>.
               <br />
@@ -148,7 +148,7 @@ export default function Home() {
               Sou fascinado por{" "}
               <span className="text-purple-300">tecnologia</span> desde pequeno,
               um pouco nerd, mas <span className="text-purple-300">sempre</span>{" "}
-              buscando aprender, por isso construi esse isso aqui.
+              buscando aprender, por isso construi isso aqui.
               <br />
             </p>
             <div className="flex justify-center md:justify-end mt-4 md:mt-0">
