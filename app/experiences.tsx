@@ -11,7 +11,7 @@ const experiences = [
     highlights: [
       "Trabalhei para desenvolver uma tela de cadastro de dispositivos dentro do Web projeto da empresa, trabalhando com Node.js, React.js, TypeScript e JavaScript.",
       "Trabalhando no suporte e manutenção de software e hardware da empresa.",
-      "Cuidados em Infra estrutura de rede, servidores e estações de trabalho.",
+      "Cuidados em Infra, rede, servidores e estações de trabalho.",
     ],
   },
   {
@@ -20,7 +20,7 @@ const experiences = [
     role: "Jovem Aprendiz de ADM/T.I.",
     period: "OUT 2024 - AGO 2025",
     highlights: [
-      "Rotina de virificação manual do Wi-fi, Ramal e E-mails",
+      "Rotina de verificação manual do Wi-fi, Ramal e E-mails",
       "Conhecimento em ferramentas de sistema ERP, manutenção de estoque, cadastros e gerenciamento de materiais.",
       "Conhecimento básico em manutenção de hardware e software.",
     ],
