@@ -84,7 +84,6 @@ export default function Home() {
                     className="w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800 block"
                   >
                     {" "}
-                    // Corrigi pra Link e rota válida Sobre mim
                   </Link>
                   <a
                     href="mailto:eduardoporangaba2@gmail.com"

@@ -12,12 +12,12 @@ export default function DududuEdu() {
         <br />
         Exemplo: Um link para o vídeo original:
         <a
-          href="https://youtu.be/alanzoka"
+          href="https://www.instagram.com/palmeiras/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-purple-300 underline"
         >
-          Assistir no YouTube
+          Acesse Já
         </a>
       </p>
       {/* Adicione mais elementos aqui, como embeds, imagens, etc. */}
