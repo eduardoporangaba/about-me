@@ -63,7 +63,7 @@ export default function Home() {
 
             {/* Botão DuDudu&Edu - rota interna */}
             <Link
-              href="/dududu-edu"
+              href="/dududu-ed"
               className="hidden sm:block px-4 py-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
             >
               DuDudu&Edu
@@ -156,7 +156,7 @@ export default function Home() {
             </p>
             <div className="flex justify-center md:justify-end mt-4 md:mt-0">
               <Image
-                src="/eu_deverdade.png"
+                src="/eu_2.png"
                 alt="Eduardo Porangaba"
                 width={500}
                 height={500}
