@@ -79,6 +79,12 @@ export default function Home() {
               </button>
               {menuOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-neutral-900 shadow-lg rounded-lg py-2">
+                  <Link
+                    href="/dududu-edu"
+                    className="block w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                  >
+                    Saber mais
+                  </Link>
                   <a
                     href="mailto:eduardoporangaba2@gmail.com"
                     className="block w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800"
