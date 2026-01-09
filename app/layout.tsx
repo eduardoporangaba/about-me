@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Eduardo Porangaba",
-  description: "Retrabalhado por Eduardo Porangaba",
+  description: "Retrabalhado por Mim",
 };
 
 export default function RootLayout({
