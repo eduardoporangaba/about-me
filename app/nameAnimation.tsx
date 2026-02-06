@@ -6,8 +6,13 @@ export default function NameAnimation() {
   return (
     <div className="inline-block text-center">
       <TypeAnimation
-        sequence={["Eduardo\nPorangaba"]}
+        sequence={[
+          "Eduardo\nPorangaba",
+          9000,
+          //"Mas\npode me chamar de\nEdu",9000, (segunda opcão para o texto)
+        ]}
         speed={3}
+        repeat={Infinity}
         wrapper="h1"
         className="uppercase tracking-wider font-black"
         style={{
