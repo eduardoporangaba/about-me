@@ -2,6 +2,11 @@
 import Image from "next/image";
 import ExperienceList from "./experiences";
 import TypeAnimation from "./nameAnimation";
+<<<<<<< HEAD
+=======
+import { ContainerScroll } from "./components/container-scroll";
+import { HeroActions } from "./components/hero-actions";
+>>>>>>> b3dab63 (atualização portfólio, design home)
 import Link from "next/link"; // Pra rotas internas suaves
 import { useState } from "react";
 
@@ -26,7 +31,11 @@ export default function Home() {
                 alt="GitHub"
                 width={24}
                 height={24}
+<<<<<<< HEAD
                 className="dark:invert"
+=======
+                className="invert"
+>>>>>>> b3dab63 (atualização portfólio, design home)
               />
               <span className="hidden sm:block">GitHub</span>
             </a>
@@ -41,7 +50,11 @@ export default function Home() {
                 alt="Instagram"
                 width={24}
                 height={24}
+<<<<<<< HEAD
                 className="dark:invert"
+=======
+                className="invert"
+>>>>>>> b3dab63 (atualização portfólio, design home)
               />
               <span className="hidden sm:block">Instagram</span>
             </a>
@@ -56,7 +69,11 @@ export default function Home() {
                 alt="Linkedin"
                 width={24}
                 height={24}
+<<<<<<< HEAD
                 className="dark:invert"
+=======
+                className="invert"
+>>>>>>> b3dab63 (atualização portfólio, design home)
               />
               <span className="hidden sm:block">Linkedin</span>
             </a>
@@ -110,6 +127,7 @@ export default function Home() {
       {/* Conteúdo principal - resto igual */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero section */}
+<<<<<<< HEAD
         <section className="min-h-screen flex flex-col items-center justify-center text-center -mt-20">
           <p className="text-lg mb-2">Opa! me chamo</p>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8">
@@ -126,6 +144,64 @@ export default function Home() {
               É um prazer te ver por aqui!
             </span>
           </p>
+=======
+        <section className="-mt-20 overflow-hidden">
+          <ContainerScroll
+            titleComponent={
+              <div className="space-y-4">
+                <TypeAnimation />
+                <HeroActions />
+              </div>
+            }
+          >
+            <div className="relative h-full overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(168,85,247,0.24),_transparent_34%),linear-gradient(135deg,_#0f0a1f_0%,_#160b2d_48%,_#09090f_100%)] px-6 py-8 text-left sm:px-10 md:px-14 md:py-12">
+              <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(255,255,255,0.08)_0%,_transparent_28%,_rgba(255,255,255,0.04)_100%)]" />
+              <div className="relative z-10 flex h-full flex-col justify-between gap-8">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-purple-200/80">
+                    Sobre mim
+                  </p>
+                  <p className="mt-6 max-w-3xl text-sm leading-6 tracking-normal text-zinc-100 sm:text-base sm:leading-7 md:text-lg md:leading-8">
+                    Olá! Sou Eduardo, um entusiasta de tecnologia trabalhando
+                    como Assistente na área de desenvolvimento. Minha jornada
+                    envolve projetos com JavaScript, TypeScript, React, HTML e
+                    CSS, aplicados tanto em iniciativas pessoais quanto
+                    profissionais, mesmo que não seja minha função principal.
+                    Com experiência ainda em crescimento, aprendo algo novo
+                    todos os dias e busco evoluir para me tornar um
+                    desenvolvedor Full-Stack e, eventualmente, um Engenheiro de
+                    Software.
+                    <br />
+                    <br />
+                    Meu foco está em criar soluções limpas, eficientes e
+                    user-friendly, sempre priorizando boas práticas e inovação.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-3 text-sm text-purple-100/80">
+                  <span className="rounded-full border border-purple-300/20 px-4 py-2">
+                    JavaScript
+                  </span>
+                  <span className="rounded-full border border-purple-300/20 px-4 py-2">
+                    TypeScript
+                  </span>
+                  <span className="rounded-full border border-purple-300/20 px-4 py-2">
+                    React
+                  </span>
+                  <span className="rounded-full border border-purple-300/20 px-4 py-2">
+                    Suporte T.I.
+                  </span>
+                </div>
+              </div>
+
+              {/* Camada futura para a assinatura animada por cima do texto. */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute bottom-8 right-8 z-20 h-24 w-64"
+              />
+            </div>
+          </ContainerScroll>
+>>>>>>> b3dab63 (atualização portfólio, design home)
         </section>
 
         {/* Sobre */}

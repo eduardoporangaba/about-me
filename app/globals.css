@@ -99,6 +99,20 @@ body {
     animation: fadeIn 0.15s ease-out;
   }
 
+<<<<<<< HEAD
+=======
+  .hero-tech-marquee {
+    animation: heroTechMarquee 24s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-tech-marquee {
+      animation: none;
+      transform: translateX(0);
+    }
+  }
+
+>>>>>>> b3dab63 (atualização portfólio, design home)
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -109,4 +123,16 @@ body {
       transform: translateY(0);
     }
   }
+<<<<<<< HEAD
+=======
+
+  @keyframes heroTechMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+>>>>>>> b3dab63 (atualização portfólio, design home)
 }
