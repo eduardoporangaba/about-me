@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { type KeyboardEvent, useState } from "react";
 
 const experiences = [
   {
@@ -32,16 +32,60 @@ export default function ExperienceList() {
 
   const currentExp = experiences[selected];
 
+  const selectAndFocusTab = (index: number) => {
+    setSelected(index);
+    document.getElementById(`experience-tab-${index}`)?.focus();
+  };
+
+  const handleTabKeyDown = (
+    event: KeyboardEvent<HTMLButtonElement>,
+    index: number,
+  ) => {
+    const lastIndex = experiences.length - 1;
+    let nextIndex: number | undefined;
+
+    switch (event.key) {
+      case "ArrowRight":
+      case "ArrowDown":
+        nextIndex = index === lastIndex ? 0 : index + 1;
+        break;
+      case "ArrowLeft":
+      case "ArrowUp":
+        nextIndex = index === 0 ? lastIndex : index - 1;
+        break;
+      case "Home":
+        nextIndex = 0;
+        break;
+      case "End":
+        nextIndex = lastIndex;
+        break;
+      default:
+        return;
+    }
+
+    event.preventDefault();
+    selectAndFocusTab(nextIndex);
+  };
+
   return (
     <div className="w-full max-w-5xl mx-auto">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
         {/* Abas das empresas */}
-        <div className="flex lg:flex-col overflow-x-auto whitespace-nowrap lg:whitespace-normal lg:w-64 pb-2 lg:pb-0">
+        <div
+          role="tablist"
+          aria-label="Experiências profissionais"
+          className="flex lg:flex-col overflow-x-auto whitespace-nowrap lg:whitespace-normal lg:w-64 pb-2 lg:pb-0"
+        >
           {experiences.map((exp, idx) => (
             <button
               key={idx}
+              id={`experience-tab-${idx}`}
+              role="tab"
               onClick={() => setSelected(idx)}
+              onKeyDown={(event) => handleTabKeyDown(event, idx)}
               aria-selected={selected === idx}
+              aria-controls="experience-panel"
+              tabIndex={selected === idx ? 0 : -1}
               className={`
                 px-6 py-4 text-left font-medium transition-all duration-200 border-l-4 lg:border-l-2
                 min-w-max lg:min-w-0 shrink-0 lg:shrink
@@ -60,7 +104,13 @@ export default function ExperienceList() {
         </div>
 
         {/* Conteúdo da experiência selecionada */}
-        <div className="flex-1 min-w-0">
+        <div
+          id="experience-panel"
+          role="tabpanel"
+          aria-labelledby={`experience-tab-${selected}`}
+          tabIndex={0}
+          className="flex-1 min-w-0"
+        >
           <div className="bg-gray-900/30 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-gray-800">
             <h3 className="text-2xl font-bold text-white">
               {currentExp.role}

@@ -56,9 +56,9 @@ export function HeroActions() {
 
       <div className="w-full max-w-3xl">
         <p className="mb-4 text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-purple-100/45">
-          Desenvolvimento
+          Conhecimentos
         </p>
-        <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_14%,white_86%,transparent)]">
+        <div className="relative overflow-hidden mask-[linear-gradient(to_right,transparent,white_14%,white_86%,transparent)]">
           <div className="hero-tech-marquee flex w-max items-center gap-14 py-2">
             <TechTrack />
             <TechTrack ariaHidden />

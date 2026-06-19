@@ -116,13 +116,16 @@ export default function Home() {
           <ContainerScroll
             titleComponent={
               <div className="space-y-4">
+                <p className="text-base font-medium tracking-normal text-purple-100/80 sm:text-lg">
+                  Opa! me chamo
+                </p>
                 <TypeAnimation />
                 <HeroActions />
               </div>
             }
           >
-            <div className="relative h-full overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(168,85,247,0.24),_transparent_34%),linear-gradient(135deg,_#0f0a1f_0%,_#160b2d_48%,_#09090f_100%)] px-6 py-8 text-left sm:px-10 md:px-14 md:py-12">
-              <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(255,255,255,0.08)_0%,_transparent_28%,_rgba(255,255,255,0.04)_100%)]" />
+            <div className="relative h-full overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.24),transparent_34%),linear-gradient(135deg,#0f0a1f_0%,#160b2d_48%,#09090f_100%)] px-6 py-8 text-left sm:px-10 md:px-14 md:py-12">
+              <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08)_0%,transparent_28%,rgba(255,255,255,0.04)_100%)]" />
               <div className="relative z-10 flex h-full flex-col justify-between gap-8">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.22em] text-purple-200/80">
