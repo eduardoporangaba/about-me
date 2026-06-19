@@ -2,11 +2,8 @@
 import Image from "next/image";
 import ExperienceList from "./experiences";
 import TypeAnimation from "./nameAnimation";
-<<<<<<< HEAD
-=======
 import { ContainerScroll } from "./components/container-scroll";
 import { HeroActions } from "./components/hero-actions";
->>>>>>> b3dab63 (atualização portfólio, design home)
 import Link from "next/link"; // Pra rotas internas suaves
 import { useState } from "react";
 
@@ -31,11 +28,7 @@ export default function Home() {
                 alt="GitHub"
                 width={24}
                 height={24}
-<<<<<<< HEAD
-                className="dark:invert"
-=======
                 className="invert"
->>>>>>> b3dab63 (atualização portfólio, design home)
               />
               <span className="hidden sm:block">GitHub</span>
             </a>
@@ -50,11 +43,7 @@ export default function Home() {
                 alt="Instagram"
                 width={24}
                 height={24}
-<<<<<<< HEAD
-                className="dark:invert"
-=======
                 className="invert"
->>>>>>> b3dab63 (atualização portfólio, design home)
               />
               <span className="hidden sm:block">Instagram</span>
             </a>
@@ -69,11 +58,7 @@ export default function Home() {
                 alt="Linkedin"
                 width={24}
                 height={24}
-<<<<<<< HEAD
-                className="dark:invert"
-=======
                 className="invert"
->>>>>>> b3dab63 (atualização portfólio, design home)
               />
               <span className="hidden sm:block">Linkedin</span>
             </a>
@@ -127,24 +112,6 @@ export default function Home() {
       {/* Conteúdo principal - resto igual */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero section */}
-<<<<<<< HEAD
-        <section className="min-h-screen flex flex-col items-center justify-center text-center -mt-20">
-          <p className="text-lg mb-2">Opa! me chamo</p>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8">
-            <TypeAnimation />
-          </h1>
-          <p className="max-w-3xl text-base sm:text-lg leading-relaxed">
-            Um menino estudando a internet.
-            <br />
-            <span className="text-purple-200">Sempre</span> com vontade de
-            aprender e isso é a <span className="text-purple-200">força</span>{" "}
-            que me move. 🛹™️
-            <br />
-            <span className="text-purple-200">
-              É um prazer te ver por aqui!
-            </span>
-          </p>
-=======
         <section className="-mt-20 overflow-hidden">
           <ContainerScroll
             titleComponent={
@@ -201,7 +168,6 @@ export default function Home() {
               />
             </div>
           </ContainerScroll>
->>>>>>> b3dab63 (atualização portfólio, design home)
         </section>
 
         {/* Sobre */}
