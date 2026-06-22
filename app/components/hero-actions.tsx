@@ -41,16 +41,16 @@ export function HeroActions() {
           href="https://github.com/eduardoporangaba"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/8 px-6 text-sm font-semibold tracking-normal text-zinc-100 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_16px_34px_rgba(0,0,0,0.2)] backdrop-blur transition duration-200 hover:-translate-y-0.5 hover:bg-white/12 active:translate-y-0"
+          className="group relative isolate inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-xl border border-white/10 bg-white/8 px-6 text-sm font-semibold tracking-normal text-zinc-100 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_16px_34px_rgba(0,0,0,0.2)] backdrop-blur transition-all duration-300 before:pointer-events-none before:absolute before:inset-0 before:z-0 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-full before:bg-zinc-100 before:transition-transform before:duration-700 before:ease-out before:content-[''] hover:-translate-y-0.5 hover:border-white/20 hover:text-zinc-950 hover:before:translate-x-0 hover:before:translate-y-0 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 motion-reduce:transition-none motion-reduce:before:transition-none"
         >
           <Image
             src="/gitHub.svg"
             alt=""
             width={16}
             height={16}
-            className="invert"
+            className="relative z-10 invert transition-[filter] duration-300 group-hover:invert-0 motion-reduce:transition-none"
           />
-          GitHub
+          <span className="relative z-10">GitHub</span>
         </a>
       </div>
 

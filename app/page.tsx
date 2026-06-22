@@ -4,107 +4,12 @@ import ExperienceList from "./experiences";
 import TypeAnimation from "./nameAnimation";
 import { ContainerScroll } from "./components/container-scroll";
 import { HeroActions } from "./components/hero-actions";
-import Link from "next/link"; // Pra rotas internas suaves
-import { useState } from "react";
+import { SocialGlassNavbar } from "./components/social-glass-navbar";
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-background font-mono tracking-wide">
-      {/* Navbar fixa, full-width, responsiva */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-neutral-200 dark:border-neutral-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-8 py-4 sm:gap-12">
-            {/* Links sociais */}
-            <a
-              href="https://github.com/eduardoporangaba"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 hover:underline hover:underline-offset-4"
-            >
-              <Image
-                src="/gitHub.svg"
-                alt="GitHub"
-                width={24}
-                height={24}
-                className="invert"
-              />
-              <span className="hidden sm:block">GitHub</span>
-            </a>
-            <a
-              href="https://www.instagram.com/edu.prl/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 hover:underline hover:underline-offset-4"
-            >
-              <Image
-                src="/instagram.svg"
-                alt="Instagram"
-                width={24}
-                height={24}
-                className="invert"
-              />
-              <span className="hidden sm:block">Instagram</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/eduardo-porangaba"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 hover:underline hover:underline-offset-4"
-            >
-              <Image
-                src="/linkedin.svg"
-                alt="Linkedin"
-                width={24}
-                height={24}
-                className="invert"
-              />
-              <span className="hidden sm:block">Linkedin</span>
-            </a>
-
-            {/* Botão DuDudu&Edu - rota interna */}
-            <Link
-              href="/dududu-edu"
-              className="hidden sm:block px-4 py-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-            >
-              DuDudu&Edu
-            </Link>
-
-            {/* Menu listradinho*/}
-            <div className="sm:hidden relative">
-              <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                className="text-3xl p-2 rounded hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
-              >
-                ⋮
-              </button>
-              {menuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-neutral-900 shadow-lg rounded-lg py-2">
-                  <Link
-                    href="/dududu-edu"
-                    className="block w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800"
-                  >
-                    Saber mais
-                  </Link>
-                  <a
-                    href="mailto:eduardoporangaba2@gmail.com"
-                    className="block w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800"
-                  >
-                    Contato
-                  </a>
-                  <Link
-                    href="/dududu-edu"
-                    className="block w-full text-left px-4 py-3 hover:bg-neutral-100 dark:hover:bg-neutral-800"
-                  >
-                    DuDudu&Edu
-                  </Link>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </nav>
+      <SocialGlassNavbar />
 
       {/* Espaço para compensar navbar fixa */}
       <div className="pt-20" />
