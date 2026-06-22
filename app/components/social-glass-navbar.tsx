@@ -5,45 +5,75 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const socialLinks = [
+const navigationItems = [
+  {
+    href: "/",
+    iconSrc: null,
+    label: "Home",
+    external: false,
+  },
   {
     href: "https://github.com/eduardoporangaba",
     iconSrc: "/gitHub.svg",
     label: "GitHub",
+    external: true,
   },
   {
     href: "https://www.instagram.com/edu.prl/",
     iconSrc: "/instagram.svg",
     label: "Instagram",
+    external: true,
   },
   {
     href: "https://www.linkedin.com/in/eduardo-porangaba",
     iconSrc: "/linkedin.svg",
     label: "Linkedin",
+    external: true,
   },
 ] as const;
 
-type SocialLabel = (typeof socialLinks)[number]["label"];
-type SocialLink = (typeof socialLinks)[number];
+type NavigationLabel = (typeof navigationItems)[number]["label"];
+type NavigationItem = (typeof navigationItems)[number];
 
-function AnimatedSocialLink({
+function HomeIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-6 w-6"
+    >
+      <path d="m3 11 9-8 9 8" />
+      <path d="M5 10v10h14V10" />
+      <path d="M9 20v-6h6v6" />
+    </svg>
+  );
+}
+
+function AnimatedNavigationItem({
   href,
   iconSrc,
   label,
+  external,
   isActive,
   onActivate,
   reduceMotion,
-}: SocialLink & {
+}: NavigationItem & {
   isActive: boolean;
-  onActivate: (label: SocialLabel) => void;
+  onActivate: (label: NavigationLabel) => void;
   reduceMotion: boolean;
 }) {
   return (
-    <a
+    <Link
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
       aria-label={label}
+      aria-current={label === "Home" ? "page" : undefined}
       data-active={isActive}
       onMouseEnter={() => onActivate(label)}
       onPointerEnter={() => onActivate(label)}
@@ -66,13 +96,19 @@ function AnimatedSocialLink({
         </motion.span>
       )}
 
-      <Image
-        src={iconSrc}
-        alt=""
-        width={24}
-        height={24}
-        className="relative z-10 invert opacity-90 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
-      />
+      <span className="relative z-10 opacity-90 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+        {iconSrc ? (
+          <Image
+            src={iconSrc}
+            alt=""
+            width={24}
+            height={24}
+            className="invert"
+          />
+        ) : (
+          <HomeIcon />
+        )}
+      </span>
 
       <span
         aria-hidden="true"
@@ -83,35 +119,35 @@ function AnimatedSocialLink({
           <span className="flex h-5 items-center text-white">{label}</span>
         </span>
       </span>
-    </a>
+    </Link>
   );
 }
 
 export function SocialGlassNavbar() {
-  const [activeLabel, setActiveLabel] = useState<SocialLabel>("GitHub");
+  const [activeLabel, setActiveLabel] = useState<NavigationLabel>("Home");
   const [menuOpen, setMenuOpen] = useState(false);
   const reduceMotion = useReducedMotion() ?? false;
 
   return (
     <nav
-      aria-label="Links sociais"
+      aria-label="Navegação principal"
       className="fixed inset-x-0 top-0 z-50 border-b border-purple-300/10 bg-[#231243]/80 backdrop-blur-md"
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-center px-4">
         <div
           className="relative flex items-center rounded-full border border-purple-300/25 bg-[#160d2b]/75 p-1.5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_16px_42px_rgba(9,4,20,0.28),0_0_30px_rgba(124,58,237,0.1)] backdrop-blur-xl"
-          onMouseLeave={() => setActiveLabel("GitHub")}
+          onMouseLeave={() => setActiveLabel("Home")}
           onBlur={(event) => {
             if (!event.currentTarget.contains(event.relatedTarget)) {
-              setActiveLabel("GitHub");
+              setActiveLabel("Home");
             }
           }}
         >
-          {socialLinks.map((socialLink) => (
-            <AnimatedSocialLink
-              key={socialLink.href}
-              {...socialLink}
-              isActive={activeLabel === socialLink.label}
+          {navigationItems.map((navigationItem) => (
+            <AnimatedNavigationItem
+              key={navigationItem.label}
+              {...navigationItem}
+              isActive={activeLabel === navigationItem.label}
               onActivate={setActiveLabel}
               reduceMotion={reduceMotion}
             />
