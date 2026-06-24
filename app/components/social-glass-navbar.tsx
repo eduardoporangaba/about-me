@@ -3,7 +3,8 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 const navigationItems = [
   {
@@ -60,10 +61,12 @@ function AnimatedNavigationItem({
   label,
   external,
   isActive,
+  isCurrent,
   onActivate,
   reduceMotion,
 }: NavigationItem & {
   isActive: boolean;
+  isCurrent: boolean;
   onActivate: (label: NavigationLabel) => void;
   reduceMotion: boolean;
 }) {
@@ -73,7 +76,7 @@ function AnimatedNavigationItem({
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
       aria-label={label}
-      aria-current={label === "Home" ? "page" : undefined}
+      aria-current={isCurrent ? "page" : undefined}
       data-active={isActive}
       onMouseEnter={() => onActivate(label)}
       onPointerEnter={() => onActivate(label)}
@@ -124,9 +127,41 @@ function AnimatedNavigationItem({
 }
 
 export function SocialGlassNavbar() {
-  const [activeLabel, setActiveLabel] = useState<NavigationLabel>("Home");
+  const pathname = usePathname();
+  const [hoveredLabel, setHoveredLabel] = useState<NavigationLabel | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion() ?? false;
+  const activeLabel = hoveredLabel ?? (pathname === "/" ? "Home" : null);
+
+  useEffect(() => {
+    if (!menuOpen) {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [menuOpen]);
 
   return (
     <nav
@@ -136,10 +171,10 @@ export function SocialGlassNavbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-center px-4">
         <div
           className="relative flex items-center rounded-full border border-purple-300/25 bg-[#160d2b]/75 p-1.5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_16px_42px_rgba(9,4,20,0.28),0_0_30px_rgba(124,58,237,0.1)] backdrop-blur-xl"
-          onMouseLeave={() => setActiveLabel("Home")}
+          onMouseLeave={() => setHoveredLabel(null)}
           onBlur={(event) => {
             if (!event.currentTarget.contains(event.relatedTarget)) {
-              setActiveLabel("Home");
+              setHoveredLabel(null);
             }
           }}
         >
@@ -148,7 +183,8 @@ export function SocialGlassNavbar() {
               key={navigationItem.label}
               {...navigationItem}
               isActive={activeLabel === navigationItem.label}
-              onActivate={setActiveLabel}
+              isCurrent={!navigationItem.external && navigationItem.href === pathname}
+              onActivate={setHoveredLabel}
               reduceMotion={reduceMotion}
             />
           ))}
@@ -158,18 +194,13 @@ export function SocialGlassNavbar() {
             className="mx-1 h-7 w-px bg-purple-100/15"
           />
 
-          <div className="relative">
+          <div ref={menuRef} className="relative">
             <button
               type="button"
               aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}
               aria-controls="social-navigation-menu"
               onClick={() => setMenuOpen((open) => !open)}
-              onKeyDown={(event) => {
-                if (event.key === "Escape") {
-                  setMenuOpen(false);
-                }
-              }}
               className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-2xl leading-none text-zinc-300 transition duration-200 hover:bg-white/8 hover:text-white focus-visible:bg-white/8 focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/70"
             >
               <span aria-hidden="true" className="-translate-y-0.5">
@@ -189,18 +220,26 @@ export function SocialGlassNavbar() {
                 >
                   <Link
                     href="/dududu-edu"
+                    onClick={() => setMenuOpen(false)}
                     className="block rounded-xl px-4 py-2.5 transition hover:bg-white/8 hover:text-white focus-visible:bg-white/8 focus-visible:text-white focus-visible:outline-none"
                   >
                     Saber mais
                   </Link>
-                  <a
-                    href="mailto:eduardoporangaba2@gmail.com"
-                    className="block rounded-xl px-4 py-2.5 transition hover:bg-white/8 hover:text-white focus-visible:bg-white/8 focus-visible:text-white focus-visible:outline-none"
+                  <Link
+                    href="/contato"
+                    aria-current={pathname === "/contato" ? "page" : undefined}
+                    onClick={() => setMenuOpen(false)}
+                    className={`block rounded-xl px-4 py-2.5 transition hover:bg-white/8 hover:text-white focus-visible:bg-white/8 focus-visible:text-white focus-visible:outline-none ${
+                      pathname === "/contato"
+                        ? "bg-purple-400/15 text-white"
+                        : ""
+                    }`}
                   >
                     Contato
-                  </a>
+                  </Link>
                   <Link
                     href="/dududu-edu"
+                    onClick={() => setMenuOpen(false)}
                     className="block rounded-xl px-4 py-2.5 transition hover:bg-white/8 hover:text-white focus-visible:bg-white/8 focus-visible:text-white focus-visible:outline-none"
                   >
                     DuDudu&amp;Edu

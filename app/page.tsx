@@ -29,43 +29,60 @@ export default function Home() {
               </div>
             }
           >
-            <div className="relative h-full overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.24),transparent_34%),linear-gradient(135deg,#0f0a1f_0%,#160b2d_48%,#09090f_100%)] px-6 py-8 text-left sm:px-10 md:px-14 md:py-12">
+            <div
+              id="sobre"
+              className="relative h-full overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.24),transparent_34%),linear-gradient(135deg,#0f0a1f_0%,#160b2d_48%,#09090f_100%)] px-6 py-8 text-left sm:px-10 md:px-14 md:py-12"
+            >
               <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08)_0%,transparent_28%,rgba(255,255,255,0.04)_100%)]" />
-              <div className="relative z-10 flex h-full flex-col justify-between gap-8">
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-purple-200/80">
-                    Sobre mim
-                  </p>
-                  <p className="mt-6 max-w-3xl text-sm leading-6 tracking-normal text-zinc-100 sm:text-base sm:leading-7 md:text-lg md:leading-8">
-                    Olá! Sou Eduardo, um entusiasta de tecnologia trabalhando
-                    como Assistente na área de desenvolvimento. Minha jornada
-                    envolve projetos com JavaScript, TypeScript, React, HTML e
-                    CSS, aplicados tanto em iniciativas pessoais quanto
-                    profissionais, mesmo que não seja minha função principal.
-                    Com experiência ainda em crescimento, aprendo algo novo
-                    todos os dias e busco evoluir para me tornar um
-                    desenvolvedor Full-Stack e, eventualmente, um Engenheiro de
-                    Software.
-                    <br />
-                    <br />
-                    Meu foco está em criar soluções limpas, eficientes e
-                    user-friendly, sempre priorizando boas práticas e inovação.
-                  </p>
+              <div className="relative z-10 grid h-full grid-cols-1 items-center gap-5 xl:grid-cols-[minmax(0,1.5fr)_minmax(220px,0.7fr)] xl:gap-10">
+                <div className="flex min-w-0 flex-col gap-5 xl:gap-8">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.22em] text-purple-200/80">
+                      Sobre mim
+                    </p>
+                    <p className="mt-4 max-w-2xl text-sm leading-6 tracking-normal text-zinc-100 sm:text-base sm:leading-7 xl:mt-6 xl:text-lg xl:leading-8">
+                      Olá! Sou Eduardo, um entusiasta de tecnologia trabalhando
+                      como Assistente na área de desenvolvimento. Minha jornada
+                      envolve projetos com JavaScript, TypeScript, React, HTML e
+                      CSS, aplicados tanto em iniciativas pessoais quanto
+                      profissionais, mesmo que não seja minha função principal.
+                      Com experiência ainda em crescimento, aprendo algo novo
+                      todos os dias e busco evoluir para me tornar um
+                      desenvolvedor Full-Stack e, eventualmente, um Engenheiro
+                      de Software.
+                      <br />
+                      <br />
+                      Meu foco está em criar soluções limpas, eficientes e
+                      user-friendly, sempre priorizando boas práticas e
+                      inovação.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 text-xs text-purple-100/80 sm:text-sm">
+                    <span className="rounded-full border border-purple-300/20 px-3 py-1.5 sm:px-4 sm:py-2">
+                      JavaScript
+                    </span>
+                    <span className="rounded-full border border-purple-300/20 px-3 py-1.5 sm:px-4 sm:py-2">
+                      TypeScript
+                    </span>
+                    <span className="rounded-full border border-purple-300/20 px-3 py-1.5 sm:px-4 sm:py-2">
+                      React
+                    </span>
+                    <span className="rounded-full border border-purple-300/20 px-3 py-1.5 sm:px-4 sm:py-2">
+                      Suporte T.I.
+                    </span>
+                  </div>
                 </div>
 
-                <div className="flex flex-wrap gap-3 text-sm text-purple-100/80">
-                  <span className="rounded-full border border-purple-300/20 px-4 py-2">
-                    JavaScript
-                  </span>
-                  <span className="rounded-full border border-purple-300/20 px-4 py-2">
-                    TypeScript
-                  </span>
-                  <span className="rounded-full border border-purple-300/20 px-4 py-2">
-                    React
-                  </span>
-                  <span className="rounded-full border border-purple-300/20 px-4 py-2">
-                    Suporte T.I.
-                  </span>
+                <div className="flex justify-center xl:justify-end">
+                  <Image
+                    src="/eu_2.png"
+                    alt="Eduardo Porangaba"
+                    width={500}
+                    height={500}
+                    sizes="(max-width: 1023px) 144px, 320px"
+                    className="aspect-square w-full max-w-32 rounded-2xl border border-purple-200/15 object-cover shadow-[0_24px_55px_rgba(0,0,0,0.32)] sm:max-w-36 xl:max-w-xs"
+                  />
                 </div>
               </div>
 
@@ -76,43 +93,6 @@ export default function Home() {
               />
             </div>
           </ContainerScroll>
-        </section>
-
-        {/* Sobre */}
-        <section id="sobre" className="py-6 sm:py-8">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Brevemente:</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
-            <p className="text-base sm:text-lg leading-6 text-left">
-              Meu nome é{" "}
-              <span className="text-purple-200">
-                Eduardo Porangaba Leite Ribeiro da Silva
-              </span>
-              , atualmente tenho 18 anos e trabalho como{" "}
-              <span className="text-purple-200">Assistente de T.I. Júnior</span>{" "}
-              na minha primeira empresa, e sinceramente?{" "}
-              <span className="text-purple-200">AMO</span> o que faço!
-              <br />
-              <br />
-              Sou fascinado por{" "}
-              <span className="text-purple-200">tecnologia</span> desde pequeno,
-              um pouco nerd, mas <span className="text-purple-200">sempre</span>{" "}
-              com vontade de mexer com as máquinas.
-              <br />
-              <br />
-              Nascido e crescido em{" "}
-              <span className="text-purple-200">São Paulo</span>, atualmente
-              moro em <span className="text-purple-200">Garuva SC</span>.
-            </p>
-            <div className="flex justify-center md:justify-end mt-4 md:mt-0">
-              <Image
-                src="/eu_2.png"
-                alt="Eduardo Porangaba"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover w-full max-w-md shadow-xl"
-              />
-            </div>
-          </div>
         </section>
 
         {/* Experiências */}

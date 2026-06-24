@@ -1,50 +1,41 @@
-# Design QA - Glass Roxo navbar
+# Design QA - Fundo sólido da página de contato
 
-- source visual truth path: `C:\Users\eduardo.p\.codex\generated_images\019eef7a-95d5-78f0-90d9-b71ce60a09bd\exec-d4334915-4070-4b69-929d-2993c1cdedf6.png`
-- implementation screenshot path: unavailable; the in-app Browser timed out on every screenshot attempt
-- viewport: desktop `1280x720`; mobile `390x844`
-- state: Home idle/current page, GitHub focus/active, menu open, mobile compact
+- source visual truth path: `C:\Users\eduardo.p\AppData\Local\Temp\codex-clipboard-462cde9b-da16-4fc1-89c3-3189d60a6d70.png`
+- implementation screenshot path: `C:\Users\eduardo.p\AppData\Local\Temp\about-me-contact-solid-background-650x428.png`
+- combined comparison path: `C:\Users\eduardo.p\AppData\Local\Temp\about-me-contact-solid-background-comparison.png`
+- viewport: focused desktop comparison `650x428`; responsive check `390x844`
+- state: `/contato`, idle
 
 **Full-view comparison evidence**
 
-- Blocked because the implementation screenshot could not be captured through the selected Browser backend.
-- DOM inspection confirmed the page identity, social links, active state, menu content, responsive geometry, and absence of console errors, but DOM evidence is not a substitute for a visual comparison.
+- The reference and implementation were combined side by side at the same `650x428` viewport.
+- The background surrounding the page content matches the solid purple reference and no grid pattern or radial glow remains.
+- Browser inspection confirmed `background-color: rgb(35, 18, 67)` (`#231243`) and `background-image: none`.
 
 **Focused region comparison evidence**
 
-- Blocked for the same screenshot failure. A focused navbar crop is still required before fidelity can pass.
+- The source is itself a focused background reference. Pixel inspection sampled `#231243` from the reference, matching the project's `--background` token used by the implementation.
 
 **Findings**
 
-- [P1] Visual fidelity cannot be signed off
-  - Location: top social navbar.
-  - Evidence: source mockup is available, but no rendered implementation screenshot is available for a combined comparison.
-  - Impact: typography, spacing, colors, glow intensity, border radius, and icon scale cannot be verified visually.
-  - Fix: capture the desktop Instagram-active state and mobile compact state with an approved fallback, create a side-by-side comparison, then resolve any P1/P2 drift.
+- No actionable P0, P1, or P2 mismatches remain for the requested background correction.
 
 **Required fidelity surfaces**
 
-- Fonts and typography: pending screenshot comparison.
-- Spacing and layout rhythm: DOM geometry passed; visual comparison pending.
-- Colors and visual tokens: pending screenshot comparison.
-- Image quality and asset fidelity: existing GitHub, Instagram, and Linkedin SVG assets are preserved; visual comparison pending.
-- Copy and content: passed for `Home`, `GitHub`, `Instagram`, `Linkedin`, `Saber mais`, `Contato`, and `DuDudu&Edu`.
+- Fonts and typography: unchanged and readable.
+- Spacing and layout rhythm: unchanged; no horizontal overflow at `650x428` or `390x844`.
+- Colors and visual tokens: passed. The page now uses the project background token `#231243`.
+- Image quality and asset fidelity: unchanged; WhatsApp and e-mail assets remain sharp.
+- Copy and content: unchanged.
 
-**Patches made since the previous QA pass**
+**Patches made during QA**
 
-- Extracted the navbar into `app/components/social-glass-navbar.tsx`.
-- Added the moving purple active capsule and upper lamp glow.
-- Preserved the vertical label-roll behavior.
-- Added pointer, focus, and keyboard activation.
-- Integrated the existing menu after a divider.
-- Added compact mobile behavior with icon-only links.
-- Added the user-approved `Home` item before GitHub, linked it to `/`, marked it as the current page, and made it the default highlight.
+- Replaced the contact page's isolated `#160d2b` background with `bg-background`.
+- Removed the decorative grid layer.
+- Removed the radial purple glow layer.
 
 **Implementation checklist**
 
-- Capture the desktop Instagram-active state.
-- Capture the mobile compact state.
-- Build a combined source-versus-implementation comparison image.
-- Fix any actionable visual drift and rerun QA.
+- No remaining work for this correction.
 
-final result: blocked
+final result: passed

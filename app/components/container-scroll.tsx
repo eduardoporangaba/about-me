@@ -118,7 +118,7 @@ function Card({ rotate, scale, children, shouldReduceMotion }: CardProps) {
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="mx-auto mt-8 h-[46rem] w-full max-w-5xl rounded-[28px] border-4 border-[#6C6C6C] bg-[#222222] p-2 shadow-2xl sm:h-[38rem] md:mt-10 md:h-[40rem] md:rounded-[30px] md:p-5"
+      className="mx-auto mt-8 h-[56rem] w-full max-w-5xl rounded-[28px] border-4 border-[#6C6C6C] bg-[#222222] p-2 shadow-2xl sm:h-[50rem] md:mt-10 md:h-[50rem] md:rounded-[30px] md:p-5 xl:h-[40rem]"
     >
       <div className="h-full w-full overflow-hidden rounded-[20px] bg-zinc-950 text-white md:rounded-2xl">
         {children}
