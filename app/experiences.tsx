@@ -68,13 +68,13 @@ export default function ExperienceList() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full max-w-5xl">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
         {/* Abas das empresas */}
         <div
           role="tablist"
           aria-label="Experiências profissionais"
-          className="flex lg:flex-col overflow-x-auto whitespace-nowrap lg:whitespace-normal lg:w-64 pb-2 lg:pb-0"
+          className="experience-scrollbar flex overflow-x-auto whitespace-nowrap pb-3 lg:w-64 lg:flex-col lg:overflow-visible lg:whitespace-normal lg:pb-0"
         >
           {experiences.map((exp, idx) => (
             <button

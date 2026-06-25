@@ -31,16 +31,16 @@ export default function Home() {
           >
             <div
               id="sobre"
-              className="relative h-full overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.24),transparent_34%),linear-gradient(135deg,#0f0a1f_0%,#160b2d_48%,#09090f_100%)] px-6 py-8 text-left sm:px-10 md:px-14 md:py-12"
+              className="about-card-scrollbar relative h-full scroll-mt-28 overflow-x-hidden overflow-y-auto bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.24),transparent_34%),linear-gradient(135deg,#0f0a1f_0%,#160b2d_48%,#09090f_100%)] px-5 py-6 text-left [scrollbar-color:rgba(196,181,253,0.68)_rgba(255,255,255,0.06)] [scrollbar-width:thin] sm:scroll-mt-32 sm:px-8 sm:py-8 md:px-12 md:py-10 xl:px-14 xl:py-12"
             >
               <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08)_0%,transparent_28%,rgba(255,255,255,0.04)_100%)]" />
-              <div className="relative z-10 grid h-full grid-cols-1 items-center gap-5 xl:grid-cols-[minmax(0,1.5fr)_minmax(220px,0.7fr)] xl:gap-10">
-                <div className="flex min-w-0 flex-col gap-5 xl:gap-8">
+              <div className="relative z-10 flex min-h-full flex-col justify-start gap-5">
+                <div className="flex min-w-0 flex-col gap-4 xl:gap-6">
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.22em] text-purple-200/80">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-purple-200/80 sm:text-sm sm:tracking-[0.22em]">
                       Sobre mim
                     </p>
-                    <p className="mt-4 max-w-2xl text-sm leading-6 tracking-normal text-zinc-100 sm:text-base sm:leading-7 xl:mt-6 xl:text-lg xl:leading-8">
+                    <p className="mt-3 max-w-3xl text-[13px] leading-6 tracking-normal text-zinc-100 sm:text-sm sm:leading-6 md:text-base md:leading-7 xl:mt-5 xl:text-base xl:leading-7">
                       Olá! Sou Eduardo, um entusiasta de tecnologia trabalhando
                       como Assistente na área de desenvolvimento. Minha jornada
                       envolve projetos com JavaScript, TypeScript, React, HTML e
@@ -58,32 +58,22 @@ export default function Home() {
                     </p>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 text-xs text-purple-100/80 sm:text-sm">
-                    <span className="rounded-full border border-purple-300/20 px-3 py-1.5 sm:px-4 sm:py-2">
+                  <div className="flex flex-wrap gap-2 text-[11px] text-purple-100/80 sm:text-xs md:text-sm">
+                    <span className="rounded-full border border-purple-300/20 px-2.5 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2">
                       JavaScript
                     </span>
-                    <span className="rounded-full border border-purple-300/20 px-3 py-1.5 sm:px-4 sm:py-2">
+                    <span className="rounded-full border border-purple-300/20 px-2.5 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2">
                       TypeScript
                     </span>
-                    <span className="rounded-full border border-purple-300/20 px-3 py-1.5 sm:px-4 sm:py-2">
+                    <span className="rounded-full border border-purple-300/20 px-2.5 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2">
                       React
                     </span>
-                    <span className="rounded-full border border-purple-300/20 px-3 py-1.5 sm:px-4 sm:py-2">
+                    <span className="rounded-full border border-purple-300/20 px-2.5 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2">
                       Suporte T.I.
                     </span>
                   </div>
                 </div>
 
-                <div className="flex justify-center xl:justify-end">
-                  <Image
-                    src="/eu_2.png"
-                    alt="Eduardo Porangaba"
-                    width={500}
-                    height={500}
-                    sizes="(max-width: 1023px) 144px, 320px"
-                    className="aspect-square w-full max-w-32 rounded-2xl border border-purple-200/15 object-cover shadow-[0_24px_55px_rgba(0,0,0,0.32)] sm:max-w-36 xl:max-w-xs"
-                  />
-                </div>
               </div>
 
               {/* Camada futura para a assinatura animada por cima do texto. */}
@@ -96,11 +86,38 @@ export default function Home() {
         </section>
 
         {/* Experiências */}
-        <section id="experiencia" className="py-6 sm:py-8">
+        <section
+          id="experiencia"
+          className="scroll-mt-28 py-6 sm:scroll-mt-32 sm:py-8"
+        >
+          <div className="grid items-start gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(280px,360px)] xl:gap-10">
+            <div className="min-w-0">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
             Experiências:
           </h2>
           <ExperienceList />
+            </div>
+
+            <aside
+              aria-label="Foto de Eduardo Porangaba"
+              className="mx-auto w-full max-w-sm xl:sticky xl:top-28 xl:mx-0 xl:max-w-none"
+            >
+              <div className="relative overflow-hidden rounded-[28px] border border-purple-200/15 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.24),transparent_34%),linear-gradient(135deg,#0f0a1f_0%,#160b2d_48%,#09090f_100%)] p-3 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_24px_60px_rgba(7,2,18,0.28)]">
+                <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08)_0%,transparent_28%,rgba(255,255,255,0.04)_100%)]" />
+                <div className="relative z-10 overflow-hidden rounded-2xl border border-purple-200/15 bg-[#0f0a1f]/70 p-2">
+                  <Image
+                    src="/eu_2.png"
+                    alt="Eduardo Porangaba"
+                    width={1179}
+                    height={851}
+                    unoptimized
+                    sizes="(max-width: 1279px) 360px, 360px"
+                    className="h-auto w-full rounded-xl object-contain"
+                  />
+                </div>
+              </div>
+            </aside>
+          </div>
         </section>
 
         {/* Footer */}
