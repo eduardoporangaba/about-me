@@ -90,17 +90,18 @@ export default function Home() {
           id="experiencia"
           className="scroll-mt-28 py-6 sm:scroll-mt-32 sm:py-8"
         >
-          <div className="grid items-start gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(280px,360px)] xl:gap-10">
-            <div className="min-w-0">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
+          <h2 className="mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl">
             Experiências:
           </h2>
-          <ExperienceList />
+
+          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(340px,440px)] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(380px,480px)]">
+            <div className="order-2 min-w-0 lg:order-1">
+              <ExperienceList />
             </div>
 
             <aside
               aria-label="Foto de Eduardo Porangaba"
-              className="mx-auto w-full max-w-sm xl:sticky xl:top-28 xl:mx-0 xl:max-w-none"
+              className="order-1 mx-auto w-full max-w-md lg:sticky lg:top-28 lg:order-2 lg:mx-0 lg:max-w-none"
             >
               <div className="relative overflow-hidden rounded-[28px] border border-purple-200/15 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.24),transparent_34%),linear-gradient(135deg,#0f0a1f_0%,#160b2d_48%,#09090f_100%)] p-3 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_24px_60px_rgba(7,2,18,0.28)]">
                 <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08)_0%,transparent_28%,rgba(255,255,255,0.04)_100%)]" />
@@ -111,7 +112,7 @@ export default function Home() {
                     width={1179}
                     height={851}
                     unoptimized
-                    sizes="(max-width: 1279px) 360px, 360px"
+                    sizes="(max-width: 767px) 92vw, (max-width: 1279px) 420px, 480px"
                     className="h-auto w-full rounded-xl object-contain"
                   />
                 </div>

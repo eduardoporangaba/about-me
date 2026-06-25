@@ -78,7 +78,7 @@ export function ContainerScroll({
   return (
     <div
       ref={containerRef}
-      className="relative flex h-[88rem] items-start justify-center px-2 pb-12 pt-28 sm:h-[82rem] sm:pt-24 md:h-[88rem] md:items-center md:px-8 md:py-12 lg:px-20"
+      className="relative flex h-[72rem] items-start justify-center px-2 pb-10 pt-28 sm:h-[68rem] sm:pt-24 md:h-[74rem] md:items-center md:px-8 md:py-12 lg:h-[70rem] lg:px-20 xl:h-[68rem]"
     >
       <div className="relative w-full py-10 md:py-32 [perspective:1000px]">
         <Header
@@ -118,7 +118,7 @@ function Card({ rotate, scale, children, shouldReduceMotion }: CardProps) {
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="mx-auto mt-8 h-[58rem] w-full max-w-5xl rounded-[28px] border-4 border-[#6C6C6C] bg-[#222222] p-2 shadow-2xl sm:h-[54rem] md:mt-10 md:h-[52rem] md:rounded-[30px] md:p-5 lg:h-[50rem] xl:h-[40rem]"
+      className="mx-auto mt-8 h-[42rem] w-full max-w-5xl rounded-[28px] border-4 border-[#6C6C6C] bg-[#222222] p-2 shadow-2xl sm:h-[38rem] md:mt-10 md:h-[36rem] md:rounded-[30px] md:p-5 lg:h-[34rem] xl:h-[32rem]"
     >
       <div className="h-full w-full overflow-hidden rounded-[20px] bg-zinc-950 text-white md:rounded-2xl">
         {children}
