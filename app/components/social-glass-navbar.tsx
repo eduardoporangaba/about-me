@@ -130,9 +130,23 @@ export function SocialGlassNavbar() {
   const pathname = usePathname();
   const [hoveredLabel, setHoveredLabel] = useState<NavigationLabel | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion() ?? false;
   const activeLabel = hoveredLabel ?? (pathname === "/" ? "Home" : null);
+
+  useEffect(() => {
+    const updateScrolled = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    updateScrolled();
+    window.addEventListener("scroll", updateScrolled, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", updateScrolled);
+    };
+  }, []);
 
   useEffect(() => {
     if (!menuOpen) {
@@ -166,11 +180,23 @@ export function SocialGlassNavbar() {
   return (
     <nav
       aria-label="Navegação principal"
-      className="fixed inset-x-0 top-0 z-50 border-b border-purple-300/10 bg-[#231243]/80 backdrop-blur-md"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-out ${
+        isScrolled
+          ? "border-b border-transparent bg-transparent pt-2"
+          : "border-b border-purple-300/10 bg-[#231243]/80 backdrop-blur-md"
+      }`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-center px-4">
+      <div
+        className={`mx-auto flex max-w-7xl items-center justify-center px-4 transition-all duration-300 ease-out ${
+          isScrolled ? "h-16" : "h-20"
+        }`}
+      >
         <div
-          className="relative flex items-center rounded-full border border-purple-300/25 bg-[#160d2b]/75 p-1.5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_16px_42px_rgba(9,4,20,0.28),0_0_30px_rgba(124,58,237,0.1)] backdrop-blur-xl"
+          className={`relative flex max-w-[calc(100vw-1.5rem)] items-center rounded-full border p-1.5 backdrop-blur-xl transition-all duration-300 ease-out ${
+            isScrolled
+              ? "border-purple-200/30 bg-[#160d2b]/85 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_18px_46px_rgba(7,2,18,0.46),0_0_34px_rgba(168,85,247,0.18)]"
+              : "border-purple-300/25 bg-[#160d2b]/75 shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_16px_42px_rgba(9,4,20,0.28),0_0_30px_rgba(124,58,237,0.1)]"
+          }`}
           onMouseLeave={() => setHoveredLabel(null)}
           onBlur={(event) => {
             if (!event.currentTarget.contains(event.relatedTarget)) {

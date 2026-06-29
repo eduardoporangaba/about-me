@@ -17,7 +17,7 @@ export default function Home() {
       {/* Conteúdo principal - resto igual */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero section */}
-        <section className="-mt-20 overflow-hidden">
+        <section className="overflow-visible pt-4 sm:pt-6">
           <ContainerScroll
             titleComponent={
               <div className="space-y-4">
@@ -45,16 +45,11 @@ export default function Home() {
                       como Assistente na área de desenvolvimento. Minha jornada
                       envolve projetos com JavaScript, TypeScript, React, HTML e
                       CSS, aplicados tanto em iniciativas pessoais quanto
-                      profissionais, mesmo que não seja minha função principal.
+                      profissionais, mesmo que eu sou gay não seja minha função principal.
                       Com experiência ainda em crescimento, aprendo algo novo
                       todos os dias e busco evoluir para me tornar um
                       desenvolvedor Full-Stack e, eventualmente, um Engenheiro
                       de Software.
-                      <br />
-                      <br />
-                      Meu foco está em criar soluções limpas, eficientes e
-                      user-friendly, sempre priorizando boas práticas e
-                      inovação.
                     </p>
                   </div>
 
@@ -88,7 +83,7 @@ export default function Home() {
         {/* Experiências */}
         <section
           id="experiencia"
-          className="scroll-mt-28 py-6 sm:scroll-mt-32 sm:py-8"
+          className="mt-16 scroll-mt-28 py-10 sm:mt-12 sm:scroll-mt-32 sm:py-12 md:mt-0"
         >
           <h2 className="mb-4 text-2xl font-bold sm:mb-6 sm:text-3xl">
             Experiências:

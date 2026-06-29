@@ -16,10 +16,6 @@ export default function AboutMe() {
           função principal. Com experiência ainda em crescimento, aprendo algo
           novo todos os dias e busco evoluir para me tornar um desenvolvedor
           Full-Stack e, eventualmente, um Engenheiro de Software.
-          <br />
-          <br />
-          Meu foco está em criar soluções limpas, eficientes e user-friendly,
-          sempre priorizando boas práticas e inovação.
         </p>
 
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">
